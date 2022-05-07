@@ -1,0 +1,10 @@
+distribution_packages:
+  - cgroup-tools
+  - ifenslave
+  - liblz4-tool
+  - vlan
+
+ubuntu_18_packages:
+  - cgroup-bin
+
+ubuntu_20_packages: []

@@ -1,0 +1,16 @@
+distribution_packages:
+  - cpupowerutils
+  - libcgroup-tools
+  - lz4
+  - mcelog
+  - perf
+  - perl-core
+  - smartmontools
+  - tuned
+  - vim-enhanced
+
+centos_7_packages: []
+almalinux_8_packages: []
+rockylinux_8_packages: []
+
+tuned_profile: throughput-performance
