@@ -16,13 +16,13 @@
   when:
     - sp_upgrade_os | bool
 
- - name: Upgrading ca-certificates package to the latest version
-   become: yes
-   ansible.builtin.package:
-     name: ca-certificates
-     state: latest
-   when:
-     - not sp_upgrade_os | bool
+- name: Upgrading ca-certificates package to the latest version
+  become: yes
+  ansible.builtin.package:
+    name: ca-certificates
+    state: latest
+  when:
+    - not sp_upgrade_os | bool
 
 - name: Installing software dependencies
   become: yes
