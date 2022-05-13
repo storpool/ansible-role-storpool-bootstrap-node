@@ -3,6 +3,8 @@ distribution_packages:
   - ifenslave
   - liblz4-tool
   - vlan
+  - linux-tools-common
+  - "linux-tools-{{ ansible_kernel }}"
 
 ubuntu_18_packages:
   - cgroup-bin
