@@ -24,6 +24,15 @@
   when:
     - not sp_upgrade_os | bool
 
+- name: Installing EPEL repository on RHEL-like distributions
+  become: yes
+  ansible.builtin.yum:
+    name: epel-release
+    state: present
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_distribution != "RedHat"
+
 - name: Installing software dependencies
   become: yes
   ansible.builtin.package:
