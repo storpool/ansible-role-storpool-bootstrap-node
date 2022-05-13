@@ -4,8 +4,21 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
-    image: quay.io/centos/centos:stream8
+  - name: ubuntu_1804
+    image: ubuntu:18.04
+    pre_build_image: true
+    groups:
+      - ubuntu
+  - name: ubuntu_2004
+    image: ubuntu:20.04
+    pre_build_image: true
+    groups:
+      - ubuntu
+  - name: centos_7
+    image: centos:7
+    pre_build_image: true
+  - name: alma_8
+    image: almalinux:8
     pre_build_image: true
 provisioner:
   name: ansible
