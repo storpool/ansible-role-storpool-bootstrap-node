@@ -11,7 +11,7 @@
   ansible.builtin.assert:
     that:
       - rootfs_mount.size_available >= 1024 ** 3 * 50
-    fail_msg: ""
+    fail_msg: "At least 50 GB of free space on the rootfs is required, currently there is {{ rootfs_mount.size_available / (1024 ** 3) }} GB"
   vars:
     rootfs_mount: "{{ ansible_mounts | selectattr('mount', 'eq', '/') | first }}"
 
