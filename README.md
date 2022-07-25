@@ -6,23 +6,34 @@ Installs all software dependencies and configures a host according to StorPools'
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Variables prefixed with `sp_` are defined as defaults and therefore can be overwritten at the inventory level.
+Variables without the `sp_` prefix are set as role-level variables.
+
+| Variable name                   | Type    | Default value                 | Description |
+| ------------------------------- | ------- | ----------------------------- | ----------- |
+| sp_upgrade_os                   | Boolean | `False`                       | Performs distribution-wide upgrade of all packages. |
+| sp_selinux_disable              | Boolean | `True`                        | Disables SELinux on RHEL-like distributions. |
+| common_packages                 | List    | See `vars/main.yml `          | List of package names to be installed common to all Linux distributions. |
+| rc_local_commands               | List    | See `vars/main.yml `          | List of commands to be placed in `/etc/rc.local` and executed at boot. |
+| distribution_packages           | List    | See `vars/redhat,debian.yml`  | List of package names common to all versions of the given distribution family. |
+| centos_7_packages               | List    | See `vars/redhat.yml`         | List of package names to be installed on CentOS 7. |
+| almalinux_8_packages            | List    | See `vars/redhat.yml`         | List of package names to be installed on AlmaLinux 8. |
+| rockylinux_8_packages           | List    | See `vars/redhat.yml`         | List of package names to be installed on RockyLinux 8. |
+| tuned_profile                   | String  | `throughput-performance`      | Sets the tuned profile on RHEL-like distributions. |
+| ubuntu_18_packages              | List    | See `vars/debian.yml`         | List of package names to be installed on Ubuntu 18.04 . |
+| ubuntu_20_packages              | List    | See `vars/debian.yml`         | List of package names to be installed on Ubuntu 20.04 . |
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+The role applies configuration common to all hosts participating in a StorPool cluster. It is intended to be used like so:
 
-    - hosts: servers
+    - hosts: storpool_nodes
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: storpool.boostrap_node, sp_upgrade_os: yes }
 
 License
 -------
 
 Apache-2.0
 
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
