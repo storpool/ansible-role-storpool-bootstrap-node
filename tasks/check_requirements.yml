@@ -10,7 +10,7 @@
 - name: Checking if there's atleast 50 GB free space on the root partion
   ansible.builtin.assert:
     that:
-      - rootfs_mount.size_available >= 1024 ^ 3 * 50
+      - rootfs_mount.size_available >= 1024 ** 3 * 50
     fail_msg: ""
   vars:
     rootfs_mount: "{{ ansible_mounts | selectattr('mount', 'eq', '/') | first }}"
