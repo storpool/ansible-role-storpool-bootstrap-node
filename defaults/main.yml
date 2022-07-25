@@ -1,2 +1,2 @@
-sp_upgrade_os: false
-sp_selinux_disable: true
+sp_upgrade_os: no
+sp_selinux_disable: yes
