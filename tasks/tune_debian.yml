@@ -7,22 +7,13 @@
   when:
     - ansible_distribution == 'Ubuntu'
 
-- name: Removing lines that enable periodic upgrades
+- name: Disabling apt periodic updates
   become: yes
   ansible.builtin.lineinfile:
-    path: /etc/apt/apt.conf.d/20auto-upgrades
-    line: "{{ item }}"
-    state: absent
-  loop:
-    - APT::Periodic::Update-Package-Lists "1";
-    - APT::Periodic::Unattended-Upgrade "1";
-
-- name: Adding lines that disable periodic upgrades
-  become: yes
-  ansible.builtin.lineinfile:
-    path: /etc/apt/apt.conf.d/20auto-upgrades
+    path: /etc/apt/apt.conf.d/999storpool
     line: "{{ item }}"
     state: present
+    create: yes
   loop:
     - APT::Periodic::Update-Package-Lists "0";
     - APT::Periodic::Unattended-Upgrade "0";
