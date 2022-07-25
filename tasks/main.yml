@@ -39,7 +39,7 @@
     name: "{{ common_packages + distribution_packages + lookup('vars', ansible_distribution|lower + '_' + ansible_distribution_major_version + '_packages') }}"
     state: present
 
-- name: Updating /etc/rc.local
+- name: Generating /etc/rc.local
   become: yes
   ansible.builtin.template:
     src: rc.local.j2
