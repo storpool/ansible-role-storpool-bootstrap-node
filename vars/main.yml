@@ -8,6 +8,7 @@ common_packages:
   - fio
   - git
   - hwloc
+  - ipmitool
   - kexec-tools
   - lldpd
   - logrotate
