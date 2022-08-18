@@ -8,6 +8,7 @@ distribution_packages:
   - smartmontools
   - tuned
   - vim-enhanced
+  - yum-utils
 
 centos_7_packages: []
 almalinux_8_packages: []
