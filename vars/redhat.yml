@@ -12,6 +12,6 @@ distribution_packages:
 
 centos_7_packages: []
 almalinux_8_packages: []
-rockylinux_8_packages: []
+rocky_8_packages: []
 
 tuned_profile: throughput-performance
