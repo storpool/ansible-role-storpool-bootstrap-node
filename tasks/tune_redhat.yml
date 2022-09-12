@@ -5,7 +5,7 @@
     state: started
     enabled: yes
   when:
-    - ansible_processor | select('contains', 'AMD') | length > 0
+    - ansible_processor | select('contains', 'Intel') | length > 0
 
 - name: Starting tuned service
   become: yes
