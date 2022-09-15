@@ -11,6 +11,7 @@ distribution_packages:
   - yum-utils
 
 centos_7_packages: []
+centos_8_packages: []
 almalinux_8_packages: []
 rocky_8_packages: []
 
