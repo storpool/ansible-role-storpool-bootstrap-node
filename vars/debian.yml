@@ -10,3 +10,4 @@ ubuntu_18_packages:
   - cgroup-bin
 
 ubuntu_20_packages: []
+ubuntu_22_packages: []
