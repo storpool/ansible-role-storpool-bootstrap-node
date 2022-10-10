@@ -20,6 +20,7 @@ common_packages:
   - mtr
   - net-tools
   - numactl
+  - nvme-cli
   - patch
   - pciutils
   - perl
