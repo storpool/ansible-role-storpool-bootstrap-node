@@ -94,6 +94,10 @@
     - lldpd.service
     - chronyd.service
 
+- name: Gather the package facts
+  ansible.builtin.package_facts:
+    manager: auto
+
 - name: Disabling generic services
   become: yes
   ansible.builtin.systemd:
@@ -104,6 +108,7 @@
     loop_var: service_name
   loop:
     - irqbalance.service
+  when: "'irqbalance' in ansible_facts.packages"
 
 - name: Performing distribution-specific tasks
   include_tasks: "tune_{{ ansible_os_family | lower }}.yml"
