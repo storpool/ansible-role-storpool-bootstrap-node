@@ -8,6 +8,7 @@ distribution_packages:
 
 ubuntu_18_packages:
   - cgroup-bin
+  - systemd-container
 
 ubuntu_20_packages: []
 ubuntu_22_packages: []
