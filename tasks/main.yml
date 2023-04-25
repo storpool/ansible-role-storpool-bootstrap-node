@@ -1,6 +1,11 @@
 - name: Including distribution-specific packages
   include_vars: "{{ ansible_os_family | lower }}.yml"
 
+- name: Including Proxmox-specific packages
+  include_vars: proxmox.yml
+  when:
+    - "'proxmox_hv' in group_names"
+
 - name: Checking if the host covers deployment requirements
   import_tasks: check_requirements.yml
   tags:
