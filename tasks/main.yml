@@ -102,6 +102,8 @@
 - name: Gather the package facts
   ansible.builtin.package_facts:
     manager: auto
+- name: Gathering running services
+  ansible.builtin.service_facts:
 
 - name: Disabling generic services
   become: yes
@@ -113,7 +115,7 @@
     loop_var: service_name
   loop:
     - irqbalance.service
-  when: "'irqbalance' in ansible_facts.packages"
+  when: service_name in ansible_facts.services
 
 - name: Performing distribution-specific tasks
   include_tasks: "tune_{{ ansible_os_family | lower }}.yml"
