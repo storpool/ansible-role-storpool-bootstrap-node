@@ -7,6 +7,7 @@ common_packages:
   - dosfstools
   - fio
   - git
+  - gdisk
   - hwloc
   - ipmitool
   - kexec-tools
