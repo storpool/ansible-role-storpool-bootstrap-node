@@ -87,6 +87,9 @@
     insertbefore: RuntimeKeepFree
   notify: Restart journald service
 
+- name: Gathering services status
+  ansible.builtin.service_facts:
+
 - name: Enabling requried services
   become: yes
   ansible.builtin.systemd:
@@ -98,12 +101,13 @@
   loop:
     - lldpd.service
     - chronyd.service
+  when:
+    - service_name in ansible_facts.services
+    - ansible_facts.services[service_name]["status"] != "masked"
 
 - name: Gather the package facts
   ansible.builtin.package_facts:
     manager: auto
-- name: Gathering running services
-  ansible.builtin.service_facts:
 
 - name: Disabling generic services
   become: yes
