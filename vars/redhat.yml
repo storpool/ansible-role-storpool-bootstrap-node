@@ -13,7 +13,10 @@ distribution_packages:
 centos_7_packages: []
 centos_8_packages: []
 redhat_8_packages: []
+redhat_9_packages: []
 almalinux_8_packages: []
+almalinux_9_packages: []
 rocky_8_packages: []
+rocky_9_packages: []
 
 tuned_profile: throughput-performance
