@@ -8,6 +8,8 @@ distribution_packages:
 
 debian_11_packages: []
 
+debian_12_packages: []
+
 ubuntu_18_packages:
   - cgroup-bin
   - systemd-container
