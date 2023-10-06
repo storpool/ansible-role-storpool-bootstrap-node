@@ -12,6 +12,7 @@ distribution_packages:
 
 centos_7_packages: []
 centos_8_packages: []
+centos_9_packages: []
 redhat_8_packages: []
 redhat_9_packages: []
 almalinux_8_packages: []
