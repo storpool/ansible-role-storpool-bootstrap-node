@@ -23,6 +23,7 @@ common_packages:
   - numactl
   - nvme-cli
   - patch
+  - parted
   - pciutils
   - perl
   - psmisc
@@ -35,6 +36,7 @@ common_packages:
   - tar
   - tcpdump
   - tmux
+  - vim
   - wget
   - xfsprogs
 
