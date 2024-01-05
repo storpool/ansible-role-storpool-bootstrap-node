@@ -3,7 +3,8 @@ distribution_packages:
   - ifenslave
   - liblz4-tool
   - vlan
-
+  - parted
+  
 debian_11_packages:
   - "linux-tools-{{ ansible_kernel }}"
 
