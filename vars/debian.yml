@@ -3,16 +3,21 @@ distribution_packages:
   - ifenslave
   - liblz4-tool
   - vlan
-  - linux-tools-common
+
+debian_11_packages:
   - "linux-tools-{{ ansible_kernel }}"
 
-debian_11_packages: []
-
-debian_12_packages: []
+debian_12_packages:
+  - linux-perf
+  - rsyslog
 
 ubuntu_18_packages:
   - cgroup-bin
   - systemd-container
+  - "linux-tools-{{ ansible_kernel }}"
 
-ubuntu_20_packages: []
-ubuntu_22_packages: []
+ubuntu_20_packages:
+  - "linux-tools-{{ ansible_kernel }}"
+
+ubuntu_22_packages:
+  - "linux-tools-{{ ansible_kernel }}"
