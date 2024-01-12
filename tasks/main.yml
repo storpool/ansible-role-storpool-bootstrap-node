@@ -75,7 +75,7 @@
   become: yes
   ansible.builtin.lineinfile:
     path: /etc/fstab
-    regexp: "\sswap\s"
+    regexp: \sswap\s
     state: absent
 
 - name: Limiting journald memory to 64M
