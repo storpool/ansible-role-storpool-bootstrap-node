@@ -23,3 +23,6 @@ ubuntu_20_packages:
 
 ubuntu_22_packages:
   - "linux-tools-generic"
+
+ubuntu_24_packages:
+  - "linux-tools-generic"
