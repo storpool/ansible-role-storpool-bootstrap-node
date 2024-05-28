@@ -19,5 +19,6 @@ almalinux_8_packages: []
 almalinux_9_packages: []
 rocky_8_packages: []
 rocky_9_packages: []
+oraclelinux_8_packages: []
 
 tuned_profile: throughput-performance
