@@ -18,3 +18,12 @@
   loop:
     - APT::Periodic::Update-Package-Lists "0";
     - APT::Periodic::Unattended-Upgrade "0";
+
+- name: Disabling multipathd service
+  become: yes
+  ansible.builtin.systemd:
+    name: multipathd.service
+    state: stopped
+    enabled: no
+  when:
+    - ansible_distribution == 'Ubuntu'
