@@ -23,8 +23,13 @@
   become: yes
   ignore_errors: true
   ansible.builtin.systemd:
-    name: multipathd.service
+    name: "{{ service_name }}"
     state: stopped
     enabled: no
+  loop_control:
+    loop_var: service_name
+  loop:
+    - multipathd.service
+    - multipathd.socket
   when:
     - ansible_distribution == 'Ubuntu'
